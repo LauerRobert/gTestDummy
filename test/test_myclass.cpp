@@ -3,14 +3,48 @@
 
 TEST(MyClassTest, testDefaultCtor)
 {
-   MyClass my_class;
+   // GIVEN
 
-   ASSERT_EQ(my_class.getValue(), 3);
+   // WHEN
+   MyClass my_class{};
+
+   // THEN
+   ASSERT_EQ(my_class.m_int, 3);
 }
 
 TEST(MyClassTest, testParameterCtor)
 {
-   MyClass my_class{5};
+   // GIVEN
+   const auto desired_value{5};
 
-   ASSERT_EQ(my_class.getValue(), 5);
+   // WHEN
+   MyClass my_class{desired_value};
+
+   // THEN
+   ASSERT_EQ(my_class.m_int, desired_value);
+}
+
+TEST(MyClassTest, testSetter)
+{
+   // GIVEN
+   MyClass my_class{};
+   const auto desired_value{5};
+
+   // WHEN
+   my_class.setValue(desired_value);
+
+   // THEN
+   ASSERT_EQ(my_class.m_int, desired_value);
+}
+
+TEST(MyClassTest, testGetter)
+{
+   // GIVEN
+   MyClass my_class{};
+
+   // WHEN
+   const auto gottenValue = my_class.getValue();
+
+   // THEN
+   ASSERT_EQ(gottenValue, my_class.m_int);
 }

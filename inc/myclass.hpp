@@ -1,18 +1,16 @@
-#include <iostream>
+#include <cstdint>
 
 struct MyClass
 {
    MyClass() = default;
 
-   MyClass(int input)
+   MyClass(int32_t input)
        : m_int(input)
-   {
-      std::cout << "Hello, world!\n";
-   };
+   {};
 
-   int getValue();
+   int32_t getValue() const;
 
-   void setValue(int desiredValue);
+   void setValue(const int32_t desiredValue);
 
-   int m_int{3};
+   int32_t m_int{3};
 };
