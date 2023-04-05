@@ -8,8 +8,10 @@ set(PROJECT_VERSION_MAJOR 1)
 set(PROJECT_VERSION_MINOR 0)
 
 # Set the C++ standard
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 
 # force googletest lib to be built the same way as the project
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
@@ -22,14 +24,19 @@ add_subdirectory(lib/googletest)
 include_directories(inc)
 
 # Create a library target for the code you want to test
-add_library(my_library src/myclass.cpp)
+add_library(my_library src/myclass.cpp src/myfunction.cpp)
 
 # Add your source code to your project
-add_executable(my_project src/main.cpp src/myclass.cpp)
+add_executable(my_project src/main.cpp src/myclass.cpp src/myfunction.cpp)
 
 # Link your executable with the Google Test library
 # target_link_libraries(my_project gtest_main)
 
 # Add a test target to your project
-add_executable(my_project_test test/test_myclass.cpp)
+add_executable(my_project_test
+   # test/test_myclass.cpp
+   test/test_myfunction.cpp
+   # test/test_myfunction_equivalence_classes.cpp
+   # test/test_myfunction_parametrized.cpp
+   )
 target_link_libraries(my_project_test gtest_main my_library)

@@ -12,5 +12,7 @@ struct MyClass
 
    int getValue();
 
+   void setValue(int desiredValue);
+
    int m_int{3};
 };

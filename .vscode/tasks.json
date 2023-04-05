@@ -1,0 +1,37 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "gtestdummy:01_cmake-configure",
+         "type": "shell",
+         "command": "cmake ..",
+         "options": {
+            "cwd": "${workspaceFolder}/build"
+         }
+      },
+      {
+         "label": "gtestdummy:02_cmake-build",
+         "type": "shell",
+         "command": "cmake --build .",
+         "options": {
+            "cwd": "${workspaceFolder}/build"
+         }
+      },
+      {
+         "label": "gtestdummy:03_run",
+         "type": "shell",
+         "command": "./my_project",
+         "options": {
+            "cwd": "${workspaceFolder}/build"
+         }
+      }
+     {
+         "label": "gtestdummy:04_run-tests",
+         "type": "shell",
+         "command": "./my_project_test",
+         "options": {
+            "cwd": "${workspaceFolder}/build"
+         }
+      }
+   ]
+}

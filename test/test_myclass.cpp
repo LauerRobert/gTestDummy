@@ -1,15 +1,14 @@
 #include "gtest/gtest.h"
-
 #include "myclass.hpp"
 
-TEST(ctorTests, testDefaultCtor)
+TEST(MyClassTest, testDefaultCtor)
 {
    MyClass my_class;
 
    ASSERT_EQ(my_class.getValue(), 3);
 }
 
-TEST(ctorTests, testParameterCtor)
+TEST(MyClassTest, testParameterCtor)
 {
    MyClass my_class{5};
 
