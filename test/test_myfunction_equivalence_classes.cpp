@@ -7,39 +7,39 @@
 
 TEST(MyFunctionTest, negativeInputReturnsMinusOne)
 {
-   // Arrange
+   // GIVEN
    constexpr std::int32_t input{-10};
    constexpr std::int32_t expectedOutput{-1};
 
-   // Act
+   // WHEN
    auto output{myFunction(input)};
 
-   // Assert
+   // THEN
    EXPECT_EQ(output, expectedOutput);
 }
 
 TEST(MyFunctionTest, zeroInputReturnsZero)
 {
-   // Arrange
+   // GIVEN
    constexpr std::int32_t input{0};
    constexpr std::int32_t expectedOutput{0};
 
-   // Act
+   // WHEN
    auto output{myFunction(input)};
 
-   // Assert
+   // THEN
    EXPECT_EQ(output, expectedOutput);
 }
 
 TEST(MyFunctionTest, positiveInputReturnsPlusOne)
 {
-   // Arrange
+   // GIVEN
    constexpr std::int32_t input{7};
    constexpr std::int32_t expectedOutput{1};
 
-   // Act
+   // WHEN
    auto output{myFunction(input)};
 
-   // Assert
+   // THEN
    EXPECT_EQ(output, expectedOutput);
 }

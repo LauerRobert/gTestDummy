@@ -34,12 +34,12 @@ INSTANTIATE_TEST_CASE_P(PositiveInputsReturnPlusOne, MyFunctionTest, ::testing::
 
 TEST_P(MyFunctionTest, BordersAreCorrectlySet)
 {
-   // Arrange
+   // GIVEN
    auto [input, expectedOutput, message] = GetParam();
 
-   // Act
+   // WHEN
    auto output = myFunction(input);
 
-   // Assert
+   // THEN
    EXPECT_EQ(output, expectedOutput) << message;
 }

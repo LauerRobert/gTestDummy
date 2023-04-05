@@ -7,7 +7,7 @@
 
 TEST(MyFunctionTest, calculationsMatchExpectedOutputs)
 {
-   // Arrange
+   // GIVEN
    constexpr std::int32_t input1{-10};
    constexpr std::int32_t expectedOutput1{-1};
 
@@ -26,7 +26,7 @@ TEST(MyFunctionTest, calculationsMatchExpectedOutputs)
    constexpr std::int32_t input6{12394};
    constexpr std::int32_t expectedOutput6{1};
 
-   // Act
+   // WHEN
    auto output1{myFunction(input1)};
    auto output2{myFunction(input2)};
    auto output3{myFunction(input3)};
@@ -34,7 +34,7 @@ TEST(MyFunctionTest, calculationsMatchExpectedOutputs)
    auto output5{myFunction(input5)};
    auto output6{myFunction(input6)};
 
-   // Assert
+   // THEN
    EXPECT_EQ(output1, expectedOutput1);
    EXPECT_EQ(output2, expectedOutput2);
    EXPECT_EQ(output3, expectedOutput3);
