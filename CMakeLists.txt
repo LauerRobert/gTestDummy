@@ -34,8 +34,8 @@ add_executable(my_project src/main.cpp src/myclass.cpp src/myfunction.cpp)
 
 # Add a test target to your project
 add_executable(my_project_test
-   # test/test_myclass.cpp
-   test/test_myclass_fixture.cpp
+   test/test_myclass.cpp
+   # test/test_myclass_fixture.cpp
    # test/test_myfunction.cpp
    # test/test_myfunction_equivalence_classes.cpp
    # test/test_myfunction_parametrized.cpp

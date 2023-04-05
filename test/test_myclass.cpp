@@ -4,18 +4,19 @@
 TEST(MyClassTest, testDefaultCtor)
 {
    // GIVEN
+   constexpr auto default_value{3};
 
    // WHEN
    MyClass my_class{};
 
    // THEN
-   ASSERT_EQ(my_class.m_int, 3);
+   ASSERT_EQ(my_class.m_int, default_value);
 }
 
 TEST(MyClassTest, testParameterCtor)
 {
    // GIVEN
-   const auto desired_value{5};
+   constexpr auto desired_value{5};
 
    // WHEN
    MyClass my_class{desired_value};
@@ -28,7 +29,7 @@ TEST(MyClassTest, testSetter)
 {
    // GIVEN
    MyClass my_class{};
-   const auto desired_value{5};
+   constexpr auto desired_value{5};
 
    // WHEN
    my_class.setValue(desired_value);
