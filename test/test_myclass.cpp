@@ -49,3 +49,17 @@ TEST(MyClassTest, testGetter)
    // THEN
    ASSERT_EQ(gottenValue, my_class.m_int);
 }
+
+TEST(MyClassTest, testStructEquality)
+{
+   // GIVEN
+   constexpr auto desired_value{5};
+   MyClass first{};
+   MyClass second{desired_value};
+
+   // WHEN
+   first.setValue(desired_value);
+
+   // THEN
+   ASSERT_EQ(first, second);
+}

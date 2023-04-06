@@ -52,4 +52,3 @@ TEST(MyClassParamTest, testParameterCtor)
    // THEN
    ASSERT_EQ(my_class.m_int, m_desired_value);
 }
-SetUp
