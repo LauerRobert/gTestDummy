@@ -21,13 +21,12 @@ TEST_F(MyClassTest, testDefaultCtor)
 TEST_F(MyClassTest, testSetter)
 {
    // GIVEN
-   const auto m_desired_value{5};
 
    // WHEN
-   m_my_class.setValue(m_desired_value);
+   m_my_class.setValue(desired_value);
 
    // THEN
-   ASSERT_EQ(m_my_class.m_int, m_desired_value);
+   ASSERT_EQ(m_my_class.m_int, desired_value);
 }
 
 TEST_F(MyClassTest, testGetter)
@@ -44,11 +43,11 @@ TEST_F(MyClassTest, testGetter)
 TEST(MyClassParamTest, testParameterCtor)
 {
    // GIVEN
-   const auto m_desired_value{5};
+   const auto desired_value{5};
 
    // WHEN
-   MyClass my_class{m_desired_value};
+   MyClass my_class{desired_value};
 
    // THEN
-   ASSERT_EQ(my_class.m_int, m_desired_value);
+   ASSERT_EQ(my_class.m_int, desired_value);
 }

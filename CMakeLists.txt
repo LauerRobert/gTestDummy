@@ -21,17 +21,20 @@ set(gtest_disable_pthreads ON CACHE BOOL "" FORCE)
 add_subdirectory(lib/googletest)
 
 # Add include directory inc for header files
-include_directories(inc)
+# include_directories(inc)
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 # Create a library target for the code you want to test
 add_library(my_library src/myclass.cpp src/myfunction.cpp)
 
+target_include_directories(my_library PUBLIC inc)
+
 # Add your source code to your project
 add_executable(my_project src/main.cpp src/myclass.cpp src/myfunction.cpp)
 
+
 # Link your executable with the Google Test library
-target_link_libraries(my_project gtest_main)
+target_link_libraries(my_project PUBLIC my_library gtest_main)
 
 # Add a test target to your project
 add_executable(my_project_test
@@ -40,8 +43,8 @@ add_executable(my_project_test
    # test/test_myfunction_parametrized.cpp
    # test/test_myclass.cpp
    # test/test_myclass_fixture.cpp
-   # test/test_myclass_assertion_types.cpp
-   test/test_myclass_private.cpp
+   test/test_myclass_assertion_types.cpp
+   # test/test_myclass_private.cpp
    )
 
-target_link_libraries(my_project_test gtest_main gmock my_library)
+target_link_libraries(my_project_test PUBLIC gtest_main gmock my_library)

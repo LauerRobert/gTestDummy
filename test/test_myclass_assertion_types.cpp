@@ -1,5 +1,8 @@
+#include <vector>
+
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+
 #include "myclass.hpp"
 
 TEST(MyClassTest, explicitSuccessAndFailure)
@@ -19,6 +22,15 @@ TEST(MyClassTest, generalizedAssertion)
 
    EXPECT_THAT(3, Eq(3));
    ASSERT_THAT(3.2F, Not(IsNan()));
+}
+
+TEST(MyClassTest, vectorElementsAreSetCorrectly)
+{
+   using testing::UnorderedElementsAre;
+
+   std::vector<std::int32_t> myVec{1, 3, 2};
+
+   EXPECT_THAT(myVec, UnorderedElementsAre(1, 2, 3));
 }
 
 TEST(MyClassTest, booleanConditions)

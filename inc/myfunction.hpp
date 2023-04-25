@@ -1,3 +1,4 @@
+#pragma once
 #include <cstdint>
 
 /// \brief This is a saturation function that maps all negative inputs to -1, zero to zero and all positive inputs to 1.
